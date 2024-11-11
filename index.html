@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+</head>
+<body style="background-color: rgb(95, 181, 181);">
+    <style>
+        p{
+            color: white;
+            padding: 0px;
+            margin: 0px;
+        }
+
+        input{
+            padding: 10px;
+            margin: 10px;
+            border-radius: 10px 10px;
+            width: 250px;
+        }
+
+        button{
+            border-radius: 20px 20px;
+            margin-top: 20px;
+        }
+    </style>
+    <center>
+        {{message}}
+        <form action="/register" method="post" enctype="multipart/form-data" style="background-color: aquamarine; width: fit-content; padding: 10px;">
+            <input type="text" name="username" required placeholder="User Name"><br>
+            <input type="email" name="email"required placeholder="Email"><br>
+            <input type="number" name="mobile" required placeholder="Mobile"><br>
+            <input type="password" name="password" required placeholder="password"><br>
+            <input type="password" name="cpassword" required placeholder="Confirm Password"><br>
+            <input type="file" name="img" required accept="image/*" style="background-color: white;"><br>
+            
+            <button type="submit">Submit</button>
+        </form><br>
+
+        <div style="background-color: cadetblue; width: fit-content; padding: 10px;">
+            {% if username %}
+                <p>username : {{username}}</p>
+                <p>email : {{email}}</p>
+                <p>password : {{password}}</p>
+                <p>mobile : {{mobile}}</p>
+                <p>Image : {{img}}</p>
+            {% endif %}
+        </div>
+    </center>
+
+</body>
+</html>
